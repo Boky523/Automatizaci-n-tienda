@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Iniciar sesión con credenciales inválidas" skipped="0" tests="1" time="3.28" timestamp="2026-11-23 12:44:33"><testcase name="Intentar iniciar sesión con credenciales inválidas"/></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Iniciar sesión con credenciales inválidas" skipped="0" tests="1" time="5.07" timestamp="2026-11-23 01:30:17"><testcase name="Intentar iniciar sesión con credenciales inválidas"/></testsuite>

@@ -1,0 +1,809 @@
+<html lang='en'><head><link href='prism/prism.css' rel='stylesheet' /></head><body><script src='prism/prism.js'></script><body><div><pre><code class='language-html'>&lt;html lang="es" data-beasties-container=""&gt;<br/>
+ &lt;head *transloco="let t"&gt;<br/>
+  &lt;meta charset="utf-8"&gt;<br/>
+  &lt;title&gt;Login - Practice Software Testing - Toolshop - v5.0&lt;/title&gt;&lt;base href="/"&gt;<br/>
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;<br/>
+  &lt;meta name="description" content="Practice Software Testing (Toolshop) is a free, modern web application for learning and practicing software testing and test automation."&gt;<br/>
+  &lt;style type="text/css" id="fa-auto-css"&gt;:root, :host {<br/>
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";<br/>
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";<br/>
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Pro";<br/>
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Pro";<br/>
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";<br/>
+  --fa-font-duotone-regular: normal 400 1em/1 "Font Awesome 6 Duotone";<br/>
+  --fa-font-duotone-light: normal 300 1em/1 "Font Awesome 6 Duotone";<br/>
+  --fa-font-duotone-thin: normal 100 1em/1 "Font Awesome 6 Duotone";<br/>
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";<br/>
+  --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";<br/>
+  --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";<br/>
+  --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";<br/>
+  --fa-font-sharp-thin: normal 100 1em/1 "Font Awesome 6 Sharp";<br/>
+  --fa-font-sharp-duotone-solid: normal 900 1em/1 "Font Awesome 6 Sharp Duotone";<br/>
+  --fa-font-sharp-duotone-regular: normal 400 1em/1 "Font Awesome 6 Sharp Duotone";<br/>
+  --fa-font-sharp-duotone-light: normal 300 1em/1 "Font Awesome 6 Sharp Duotone";<br/>
+  --fa-font-sharp-duotone-thin: normal 100 1em/1 "Font Awesome 6 Sharp Duotone";<br/>
+}<br/>
+<br/>
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {<br/>
+  overflow: visible;<br/>
+  box-sizing: content-box;<br/>
+}<br/>
+<br/>
+.svg-inline--fa {<br/>
+  display: var(--fa-display, inline-block);<br/>
+  height: 1em;<br/>
+  overflow: visible;<br/>
+  vertical-align: -0.125em;<br/>
+}<br/>
+.svg-inline--fa.fa-2xs {<br/>
+  vertical-align: 0.1em;<br/>
+}<br/>
+.svg-inline--fa.fa-xs {<br/>
+  vertical-align: 0em;<br/>
+}<br/>
+.svg-inline--fa.fa-sm {<br/>
+  vertical-align: -0.0714285705em;<br/>
+}<br/>
+.svg-inline--fa.fa-lg {<br/>
+  vertical-align: -0.2em;<br/>
+}<br/>
+.svg-inline--fa.fa-xl {<br/>
+  vertical-align: -0.25em;<br/>
+}<br/>
+.svg-inline--fa.fa-2xl {<br/>
+  vertical-align: -0.3125em;<br/>
+}<br/>
+.svg-inline--fa.fa-pull-left {<br/>
+  margin-right: var(--fa-pull-margin, 0.3em);<br/>
+  width: auto;<br/>
+}<br/>
+.svg-inline--fa.fa-pull-right {<br/>
+  margin-left: var(--fa-pull-margin, 0.3em);<br/>
+  width: auto;<br/>
+}<br/>
+.svg-inline--fa.fa-li {<br/>
+  width: var(--fa-li-width, 2em);<br/>
+  top: 0.25em;<br/>
+}<br/>
+.svg-inline--fa.fa-fw {<br/>
+  width: var(--fa-fw-width, 1.25em);<br/>
+}<br/>
+<br/>
+.fa-layers svg.svg-inline--fa {<br/>
+  bottom: 0;<br/>
+  left: 0;<br/>
+  margin: auto;<br/>
+  position: absolute;<br/>
+  right: 0;<br/>
+  top: 0;<br/>
+}<br/>
+<br/>
+.fa-layers-counter, .fa-layers-text {<br/>
+  display: inline-block;<br/>
+  position: absolute;<br/>
+  text-align: center;<br/>
+}<br/>
+<br/>
+.fa-layers {<br/>
+  display: inline-block;<br/>
+  height: 1em;<br/>
+  position: relative;<br/>
+  text-align: center;<br/>
+  vertical-align: -0.125em;<br/>
+  width: 1em;<br/>
+}<br/>
+.fa-layers svg.svg-inline--fa {<br/>
+  transform-origin: center center;<br/>
+}<br/>
+<br/>
+.fa-layers-text {<br/>
+  left: 50%;<br/>
+  top: 50%;<br/>
+  transform: translate(-50%, -50%);<br/>
+  transform-origin: center center;<br/>
+}<br/>
+<br/>
+.fa-layers-counter {<br/>
+  background-color: var(--fa-counter-background-color, #ff253a);<br/>
+  border-radius: var(--fa-counter-border-radius, 1em);<br/>
+  box-sizing: border-box;<br/>
+  color: var(--fa-inverse, #fff);<br/>
+  line-height: var(--fa-counter-line-height, 1);<br/>
+  max-width: var(--fa-counter-max-width, 5em);<br/>
+  min-width: var(--fa-counter-min-width, 1.5em);<br/>
+  overflow: hidden;<br/>
+  padding: var(--fa-counter-padding, 0.25em 0.5em);<br/>
+  right: var(--fa-right, 0);<br/>
+  text-overflow: ellipsis;<br/>
+  top: var(--fa-top, 0);<br/>
+  transform: scale(var(--fa-counter-scale, 0.25));<br/>
+  transform-origin: top right;<br/>
+}<br/>
+<br/>
+.fa-layers-bottom-right {<br/>
+  bottom: var(--fa-bottom, 0);<br/>
+  right: var(--fa-right, 0);<br/>
+  top: auto;<br/>
+  transform: scale(var(--fa-layers-scale, 0.25));<br/>
+  transform-origin: bottom right;<br/>
+}<br/>
+<br/>
+.fa-layers-bottom-left {<br/>
+  bottom: var(--fa-bottom, 0);<br/>
+  left: var(--fa-left, 0);<br/>
+  right: auto;<br/>
+  top: auto;<br/>
+  transform: scale(var(--fa-layers-scale, 0.25));<br/>
+  transform-origin: bottom left;<br/>
+}<br/>
+<br/>
+.fa-layers-top-right {<br/>
+  top: var(--fa-top, 0);<br/>
+  right: var(--fa-right, 0);<br/>
+  transform: scale(var(--fa-layers-scale, 0.25));<br/>
+  transform-origin: top right;<br/>
+}<br/>
+<br/>
+.fa-layers-top-left {<br/>
+  left: var(--fa-left, 0);<br/>
+  right: auto;<br/>
+  top: var(--fa-top, 0);<br/>
+  transform: scale(var(--fa-layers-scale, 0.25));<br/>
+  transform-origin: top left;<br/>
+}<br/>
+<br/>
+.fa-1x {<br/>
+  font-size: 1em;<br/>
+}<br/>
+<br/>
+.fa-2x {<br/>
+  font-size: 2em;<br/>
+}<br/>
+<br/>
+.fa-3x {<br/>
+  font-size: 3em;<br/>
+}<br/>
+<br/>
+.fa-4x {<br/>
+  font-size: 4em;<br/>
+}<br/>
+<br/>
+.fa-5x {<br/>
+  font-size: 5em;<br/>
+}<br/>
+<br/>
+.fa-6x {<br/>
+  font-size: 6em;<br/>
+}<br/>
+<br/>
+.fa-7x {<br/>
+  font-size: 7em;<br/>
+}<br/>
+<br/>
+.fa-8x {<br/>
+  font-size: 8em;<br/>
+}<br/>
+<br/>
+.fa-9x {<br/>
+  font-size: 9em;<br/>
+}<br/>
+<br/>
+.fa-10x {<br/>
+  font-size: 10em;<br/>
+}<br/>
+<br/>
+.fa-2xs {<br/>
+  font-size: 0.625em;<br/>
+  line-height: 0.1em;<br/>
+  vertical-align: 0.225em;<br/>
+}<br/>
+<br/>
+.fa-xs {<br/>
+  font-size: 0.75em;<br/>
+  line-height: 0.0833333337em;<br/>
+  vertical-align: 0.125em;<br/>
+}<br/>
+<br/>
+.fa-sm {<br/>
+  font-size: 0.875em;<br/>
+  line-height: 0.0714285718em;<br/>
+  vertical-align: 0.0535714295em;<br/>
+}<br/>
+<br/>
+.fa-lg {<br/>
+  font-size: 1.25em;<br/>
+  line-height: 0.05em;<br/>
+  vertical-align: -0.075em;<br/>
+}<br/>
+<br/>
+.fa-xl {<br/>
+  font-size: 1.5em;<br/>
+  line-height: 0.0416666682em;<br/>
+  vertical-align: -0.125em;<br/>
+}<br/>
+<br/>
+.fa-2xl {<br/>
+  font-size: 2em;<br/>
+  line-height: 0.03125em;<br/>
+  vertical-align: -0.1875em;<br/>
+}<br/>
+<br/>
+.fa-fw {<br/>
+  text-align: center;<br/>
+  width: 1.25em;<br/>
+}<br/>
+<br/>
+.fa-ul {<br/>
+  list-style-type: none;<br/>
+  margin-left: var(--fa-li-margin, 2.5em);<br/>
+  padding-left: 0;<br/>
+}<br/>
+.fa-ul &gt; li {<br/>
+  position: relative;<br/>
+}<br/>
+<br/>
+.fa-li {<br/>
+  left: calc(-1 * var(--fa-li-width, 2em));<br/>
+  position: absolute;<br/>
+  text-align: center;<br/>
+  width: var(--fa-li-width, 2em);<br/>
+  line-height: inherit;<br/>
+}<br/>
+<br/>
+.fa-border {<br/>
+  border-color: var(--fa-border-color, #eee);<br/>
+  border-radius: var(--fa-border-radius, 0.1em);<br/>
+  border-style: var(--fa-border-style, solid);<br/>
+  border-width: var(--fa-border-width, 0.08em);<br/>
+  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);<br/>
+}<br/>
+<br/>
+.fa-pull-left {<br/>
+  float: left;<br/>
+  margin-right: var(--fa-pull-margin, 0.3em);<br/>
+}<br/>
+<br/>
+.fa-pull-right {<br/>
+  float: right;<br/>
+  margin-left: var(--fa-pull-margin, 0.3em);<br/>
+}<br/>
+<br/>
+.fa-beat {<br/>
+  animation-name: fa-beat;<br/>
+  animation-delay: var(--fa-animation-delay, 0s);<br/>
+  animation-direction: var(--fa-animation-direction, normal);<br/>
+  animation-duration: var(--fa-animation-duration, 1s);<br/>
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);<br/>
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);<br/>
+}<br/>
+<br/>
+.fa-bounce {<br/>
+  animation-name: fa-bounce;<br/>
+  animation-delay: var(--fa-animation-delay, 0s);<br/>
+  animation-direction: var(--fa-animation-direction, normal);<br/>
+  animation-duration: var(--fa-animation-duration, 1s);<br/>
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);<br/>
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));<br/>
+}<br/>
+<br/>
+.fa-fade {<br/>
+  animation-name: fa-fade;<br/>
+  animation-delay: var(--fa-animation-delay, 0s);<br/>
+  animation-direction: var(--fa-animation-direction, normal);<br/>
+  animation-duration: var(--fa-animation-duration, 1s);<br/>
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);<br/>
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));<br/>
+}<br/>
+<br/>
+.fa-beat-fade {<br/>
+  animation-name: fa-beat-fade;<br/>
+  animation-delay: var(--fa-animation-delay, 0s);<br/>
+  animation-direction: var(--fa-animation-direction, normal);<br/>
+  animation-duration: var(--fa-animation-duration, 1s);<br/>
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);<br/>
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));<br/>
+}<br/>
+<br/>
+.fa-flip {<br/>
+  animation-name: fa-flip;<br/>
+  animation-delay: var(--fa-animation-delay, 0s);<br/>
+  animation-direction: var(--fa-animation-direction, normal);<br/>
+  animation-duration: var(--fa-animation-duration, 1s);<br/>
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);<br/>
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);<br/>
+}<br/>
+<br/>
+.fa-shake {<br/>
+  animation-name: fa-shake;<br/>
+  animation-delay: var(--fa-animation-delay, 0s);<br/>
+  animation-direction: var(--fa-animation-direction, normal);<br/>
+  animation-duration: var(--fa-animation-duration, 1s);<br/>
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);<br/>
+  animation-timing-function: var(--fa-animation-timing, linear);<br/>
+}<br/>
+<br/>
+.fa-spin {<br/>
+  animation-name: fa-spin;<br/>
+  animation-delay: var(--fa-animation-delay, 0s);<br/>
+  animation-direction: var(--fa-animation-direction, normal);<br/>
+  animation-duration: var(--fa-animation-duration, 2s);<br/>
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);<br/>
+  animation-timing-function: var(--fa-animation-timing, linear);<br/>
+}<br/>
+<br/>
+.fa-spin-reverse {<br/>
+  --fa-animation-direction: reverse;<br/>
+}<br/>
+<br/>
+.fa-pulse,<br/>
+.fa-spin-pulse {<br/>
+  animation-name: fa-spin;<br/>
+  animation-direction: var(--fa-animation-direction, normal);<br/>
+  animation-duration: var(--fa-animation-duration, 1s);<br/>
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);<br/>
+  animation-timing-function: var(--fa-animation-timing, steps(8));<br/>
+}<br/>
+<br/>
+@media (prefers-reduced-motion: reduce) {<br/>
+  .fa-beat,<br/>
+.fa-bounce,<br/>
+.fa-fade,<br/>
+.fa-beat-fade,<br/>
+.fa-flip,<br/>
+.fa-pulse,<br/>
+.fa-shake,<br/>
+.fa-spin,<br/>
+.fa-spin-pulse {<br/>
+    animation-delay: -1ms;<br/>
+    animation-duration: 1ms;<br/>
+    animation-iteration-count: 1;<br/>
+    transition-delay: 0s;<br/>
+    transition-duration: 0s;<br/>
+  }<br/>
+}<br/>
+@keyframes fa-beat {<br/>
+  0%, 90% {<br/>
+    transform: scale(1);<br/>
+  }<br/>
+  45% {<br/>
+    transform: scale(var(--fa-beat-scale, 1.25));<br/>
+  }<br/>
+}<br/>
+@keyframes fa-bounce {<br/>
+  0% {<br/>
+    transform: scale(1, 1) translateY(0);<br/>
+  }<br/>
+  10% {<br/>
+    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);<br/>
+  }<br/>
+  30% {<br/>
+    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));<br/>
+  }<br/>
+  50% {<br/>
+    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);<br/>
+  }<br/>
+  57% {<br/>
+    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));<br/>
+  }<br/>
+  64% {<br/>
+    transform: scale(1, 1) translateY(0);<br/>
+  }<br/>
+  100% {<br/>
+    transform: scale(1, 1) translateY(0);<br/>
+  }<br/>
+}<br/>
+@keyframes fa-fade {<br/>
+  50% {<br/>
+    opacity: var(--fa-fade-opacity, 0.4);<br/>
+  }<br/>
+}<br/>
+@keyframes fa-beat-fade {<br/>
+  0%, 100% {<br/>
+    opacity: var(--fa-beat-fade-opacity, 0.4);<br/>
+    transform: scale(1);<br/>
+  }<br/>
+  50% {<br/>
+    opacity: 1;<br/>
+    transform: scale(var(--fa-beat-fade-scale, 1.125));<br/>
+  }<br/>
+}<br/>
+@keyframes fa-flip {<br/>
+  50% {<br/>
+    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));<br/>
+  }<br/>
+}<br/>
+@keyframes fa-shake {<br/>
+  0% {<br/>
+    transform: rotate(-15deg);<br/>
+  }<br/>
+  4% {<br/>
+    transform: rotate(15deg);<br/>
+  }<br/>
+  8%, 24% {<br/>
+    transform: rotate(-18deg);<br/>
+  }<br/>
+  12%, 28% {<br/>
+    transform: rotate(18deg);<br/>
+  }<br/>
+  16% {<br/>
+    transform: rotate(-22deg);<br/>
+  }<br/>
+  20% {<br/>
+    transform: rotate(22deg);<br/>
+  }<br/>
+  32% {<br/>
+    transform: rotate(-12deg);<br/>
+  }<br/>
+  36% {<br/>
+    transform: rotate(12deg);<br/>
+  }<br/>
+  40%, 100% {<br/>
+    transform: rotate(0deg);<br/>
+  }<br/>
+}<br/>
+@keyframes fa-spin {<br/>
+  0% {<br/>
+    transform: rotate(0deg);<br/>
+  }<br/>
+  100% {<br/>
+    transform: rotate(360deg);<br/>
+  }<br/>
+}<br/>
+.fa-rotate-90 {<br/>
+  transform: rotate(90deg);<br/>
+}<br/>
+<br/>
+.fa-rotate-180 {<br/>
+  transform: rotate(180deg);<br/>
+}<br/>
+<br/>
+.fa-rotate-270 {<br/>
+  transform: rotate(270deg);<br/>
+}<br/>
+<br/>
+.fa-flip-horizontal {<br/>
+  transform: scale(-1, 1);<br/>
+}<br/>
+<br/>
+.fa-flip-vertical {<br/>
+  transform: scale(1, -1);<br/>
+}<br/>
+<br/>
+.fa-flip-both,<br/>
+.fa-flip-horizontal.fa-flip-vertical {<br/>
+  transform: scale(-1, -1);<br/>
+}<br/>
+<br/>
+.fa-rotate-by {<br/>
+  transform: rotate(var(--fa-rotate-angle, 0));<br/>
+}<br/>
+<br/>
+.fa-stack {<br/>
+  display: inline-block;<br/>
+  vertical-align: middle;<br/>
+  height: 2em;<br/>
+  position: relative;<br/>
+  width: 2.5em;<br/>
+}<br/>
+<br/>
+.fa-stack-1x,<br/>
+.fa-stack-2x {<br/>
+  bottom: 0;<br/>
+  left: 0;<br/>
+  margin: auto;<br/>
+  position: absolute;<br/>
+  right: 0;<br/>
+  top: 0;<br/>
+  z-index: var(--fa-stack-z-index, auto);<br/>
+}<br/>
+<br/>
+.svg-inline--fa.fa-stack-1x {<br/>
+  height: 1em;<br/>
+  width: 1.25em;<br/>
+}<br/>
+.svg-inline--fa.fa-stack-2x {<br/>
+  height: 2em;<br/>
+  width: 2.5em;<br/>
+}<br/>
+<br/>
+.fa-inverse {<br/>
+  color: var(--fa-inverse, #fff);<br/>
+}<br/>
+<br/>
+.sr-only,<br/>
+.fa-sr-only {<br/>
+  position: absolute;<br/>
+  width: 1px;<br/>
+  height: 1px;<br/>
+  padding: 0;<br/>
+  margin: -1px;<br/>
+  overflow: hidden;<br/>
+  clip: rect(0, 0, 0, 0);<br/>
+  white-space: nowrap;<br/>
+  border-width: 0;<br/>
+}<br/>
+<br/>
+.sr-only-focusable:not(:focus),<br/>
+.fa-sr-only-focusable:not(:focus) {<br/>
+  position: absolute;<br/>
+  width: 1px;<br/>
+  height: 1px;<br/>
+  padding: 0;<br/>
+  margin: -1px;<br/>
+  overflow: hidden;<br/>
+  clip: rect(0, 0, 0, 0);<br/>
+  white-space: nowrap;<br/>
+  border-width: 0;<br/>
+}<br/>
+<br/>
+.svg-inline--fa .fa-primary {<br/>
+  fill: var(--fa-primary-color, currentColor);<br/>
+  opacity: var(--fa-primary-opacity, 1);<br/>
+}<br/>
+<br/>
+.svg-inline--fa .fa-secondary {<br/>
+  fill: var(--fa-secondary-color, currentColor);<br/>
+  opacity: var(--fa-secondary-opacity, 0.4);<br/>
+}<br/>
+<br/>
+.svg-inline--fa.fa-swap-opacity .fa-primary {<br/>
+  opacity: var(--fa-secondary-opacity, 0.4);<br/>
+}<br/>
+<br/>
+.svg-inline--fa.fa-swap-opacity .fa-secondary {<br/>
+  opacity: var(--fa-primary-opacity, 1);<br/>
+}<br/>
+<br/>
+.svg-inline--fa mask .fa-primary,<br/>
+.svg-inline--fa mask .fa-secondary {<br/>
+  fill: black;<br/>
+}&lt;/style&gt;<br/>
+  &lt;link rel="canonical" href="https://practicesoftwaretesting.com/auth/login"&gt;<br/>
+  &lt;link rel="preload" as="image" href="../assets/img/barn-2400x1600.avif" fetchpriority="high"&gt;<br/>
+  &lt;link rel="icon" type="image/x-icon" href="favicon.ico"&gt;<br/>
+  &lt;link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"&gt;<br/>
+  &lt;link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"&gt;<br/>
+  &lt;link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"&gt;<br/>
+  &lt;meta property="og:type" content="website"&gt;<br/>
+  &lt;meta property="og:site_name" content="Practice Software Testing - Toolshop"&gt;<br/>
+  &lt;meta property="og:title" content="Practice Software Testing"&gt;<br/>
+  &lt;meta property="og:image" content="https://practicesoftwaretesting.com/assets/img/barn-2400x1600.avif"&gt;<br/>
+  &lt;meta property="og:description" content="Practice Software Testing (Toolshop) is a free, modern web application for learning and practicing software testing and test automation."&gt;<br/>
+  &lt;meta property="og:url" content="https://practicesoftwaretesting.com/auth/login"&gt;<br/>
+  &lt;meta name="twitter:card" content="summary_large_image"&gt;<br/>
+  &lt;meta name="twitter:title" content="Practice Software Testing"&gt;<br/>
+  &lt;meta name="twitter:description" content="Modern application used to learn software testing or test automation."&gt;<br/>
+  &lt;meta name="twitter:image" content="https://practicesoftwaretesting.com/assets/img/barn-2400x1600.avif"&gt;<br/>
+  &lt;link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5"&gt;<br/>
+  &lt;meta name="msapplication-TileColor" content="#da532c"&gt;<br/>
+  &lt;meta name="theme-color" content="#ffffff"&gt;<br/>
+  &lt;script type="application/ld+json"&gt;<br/>
+  {<br/>
+    "@context": "https://schema.org",<br/>
+    "@graph": [<br/>
+      {<br/>
+        "@type": "Organization",<br/>
+        "@id": "https://practicesoftwaretesting.com/#organization",<br/>
+        "name": "Practice Software Testing - Toolshop",<br/>
+        "url": "https://practicesoftwaretesting.com/",<br/>
+        "logo": "https://practicesoftwaretesting.com/assets/img/barn-2400x1600.avif",<br/>
+        "description": "A free, modern web application for learning and practicing software testing and test automation."<br/>
+      },<br/>
+      {<br/>
+        "@type": "WebSite",<br/>
+        "@id": "https://practicesoftwaretesting.com/#website",<br/>
+        "name": "Practice Software Testing - Toolshop",<br/>
+        "url": "https://practicesoftwaretesting.com/",<br/>
+        "publisher": { "@id": "https://practicesoftwaretesting.com/#organization" }<br/>
+      }<br/>
+    ]<br/>
+  }<br/>
+  &lt;/script&gt;<br/>
+  &lt;style&gt;:root{--bs-blue:#0d6efd;--bs-indigo:#6610f2;--bs-purple:#6f42c1;--bs-pink:#d63384;--bs-red:#dc3545;--bs-orange:#fd7e14;--bs-yellow:#ffc107;--bs-green:#198754;--bs-teal:#20c997;--bs-cyan:#0dcaf0;--bs-black:#000;--bs-white:#fff;--bs-gray:#6c757d;--bs-gray-dark:#343a40;--bs-gray-100:#f8f9fa;--bs-gray-200:#e9ecef;--bs-gray-300:#dee2e6;--bs-gray-400:#ced4da;--bs-gray-500:#adb5bd;--bs-gray-600:#6c757d;--bs-gray-700:#495057;--bs-gray-800:#343a40;--bs-gray-900:#212529;--bs-primary:#0d6efd;--bs-secondary:#6c757d;--bs-success:#198754;--bs-info:#0dcaf0;--bs-warning:#ffc107;--bs-danger:#dc3545;--bs-light:#f8f9fa;--bs-dark:#212529;--bs-primary-rgb:13,110,253;--bs-secondary-rgb:108,117,125;--bs-success-rgb:25,135,84;--bs-info-rgb:13,202,240;--bs-warning-rgb:255,193,7;--bs-danger-rgb:220,53,69;--bs-light-rgb:248,249,250;--bs-dark-rgb:33,37,41;--bs-primary-text-emphasis:#052c65;--bs-secondary-text-emphasis:#2b2f32;--bs-success-text-emphasis:#0a3622;--bs-info-text-emphasis:#055160;--bs-warning-text-emphasis:#664d03;--bs-danger-text-emphasis:#58151c;--bs-light-text-emphasis:#495057;--bs-dark-text-emphasis:#495057;--bs-primary-bg-subtle:#cfe2ff;--bs-secondary-bg-subtle:#e2e3e5;--bs-success-bg-subtle:#d1e7dd;--bs-info-bg-subtle:#cff4fc;--bs-warning-bg-subtle:#fff3cd;--bs-danger-bg-subtle:#f8d7da;--bs-light-bg-subtle:#fcfcfd;--bs-dark-bg-subtle:#ced4da;--bs-primary-border-subtle:#9ec5fe;--bs-secondary-border-subtle:#c4c8cb;--bs-success-border-subtle:#a3cfbb;--bs-info-border-subtle:#9eeaf9;--bs-warning-border-subtle:#ffe69c;--bs-danger-border-subtle:#f1aeb5;--bs-light-border-subtle:#e9ecef;--bs-dark-border-subtle:#adb5bd;--bs-white-rgb:255,255,255;--bs-black-rgb:0,0,0;--bs-font-sans-serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--bs-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--bs-gradient:linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));--bs-body-font-family:var(--bs-font-sans-serif);--bs-body-font-size:1rem;--bs-body-font-weight:400;--bs-body-line-height:1.5;--bs-body-color:#212529;--bs-body-color-rgb:33,37,41;--bs-body-bg:#fff;--bs-body-bg-rgb:255,255,255;--bs-emphasis-color:#000;--bs-emphasis-color-rgb:0,0,0;--bs-secondary-color:rgba(33, 37, 41, .75);--bs-secondary-color-rgb:33,37,41;--bs-secondary-bg:#e9ecef;--bs-secondary-bg-rgb:233,236,239;--bs-tertiary-color:rgba(33, 37, 41, .5);--bs-tertiary-color-rgb:33,37,41;--bs-tertiary-bg:#f8f9fa;--bs-tertiary-bg-rgb:248,249,250;--bs-heading-color:inherit;--bs-link-color:#0d6efd;--bs-link-color-rgb:13,110,253;--bs-link-decoration:underline;--bs-link-hover-color:#0a58ca;--bs-link-hover-color-rgb:10,88,202;--bs-code-color:#d63384;--bs-highlight-color:#212529;--bs-highlight-bg:#fff3cd;--bs-border-width:1px;--bs-border-style:solid;--bs-border-color:#dee2e6;--bs-border-color-translucent:rgba(0, 0, 0, .175);--bs-border-radius:.375rem;--bs-border-radius-sm:.25rem;--bs-border-radius-lg:.5rem;--bs-border-radius-xl:1rem;--bs-border-radius-xxl:2rem;--bs-border-radius-2xl:var(--bs-border-radius-xxl);--bs-border-radius-pill:50rem;--bs-box-shadow:0 .5rem 1rem rgba(0, 0, 0, .15);--bs-box-shadow-sm:0 .125rem .25rem rgba(0, 0, 0, .075);--bs-box-shadow-lg:0 1rem 3rem rgba(0, 0, 0, .175);--bs-box-shadow-inset:inset 0 1px 2px rgba(0, 0, 0, .075);--bs-focus-ring-width:.25rem;--bs-focus-ring-opacity:.25;--bs-focus-ring-color:rgba(13, 110, 253, .25);--bs-form-valid-color:#198754;--bs-form-valid-border-color:#198754;--bs-form-invalid-color:#dc3545;--bs-form-invalid-border-color:#dc3545}*,:after,:before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:var(--bs-body-font-family);font-size:var(--bs-body-font-size);font-weight:var(--bs-body-font-weight);line-height:var(--bs-body-line-height);color:var(--bs-body-color);text-align:var(--bs-body-text-align);background-color:var(--bs-body-bg);-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}:root{--bs-breakpoint-xs:0;--bs-breakpoint-sm:576px;--bs-breakpoint-md:768px;--bs-breakpoint-lg:992px;--bs-breakpoint-xl:1200px;--bs-breakpoint-xxl:1400px}:root{--bs-btn-close-filter: }:root{--bs-carousel-indicator-active-bg:#fff;--bs-carousel-caption-color:#fff;--bs-carousel-control-icon-filter: }html,body{height:100%;scroll-behavior:inherit!important}&lt;/style&gt;<br/>
+  &lt;link rel="stylesheet" href="styles-NGJBEA5C.css" media="all" onload="this.media='all'"&gt;<br/>
+  &lt;noscript&gt;<br/>
+   &lt;link rel="stylesheet" href="styles-NGJBEA5C.css"&gt;<br/>
+  &lt;/noscript&gt;<br/>
+  &lt;style&gt;.btn-link-style[_ngcontent-ng-c2913155081]{background:none;border:none;text-decoration:none;text-align:inherit;padding-left:.5rem;padding-right:.5rem}.btn-link-style[_ngcontent-ng-c2913155081]:focus{outline:2px solid #1E6098;outline-offset:2px}.st0[_ngcontent-ng-c2913155081]{fill:#8dc12f}.st1[_ngcontent-ng-c2913155081]{fill:#fff}.st2[_ngcontent-ng-c2913155081]{fill:#9dc83d}.st3[_ngcontent-ng-c2913155081]{fill:#1d6098}.st4[_ngcontent-ng-c2913155081]{fill:#5a585d}.gear[_ngcontent-ng-c2913155081]{transform-origin:50% 50%;transform-box:fill-box;-webkit-animation:_ngcontent-ng-c2913155081_frames 10s infinite linear;animation:_ngcontent-ng-c2913155081_frames 10s infinite linear}@keyframes _ngcontent-ng-c2913155081_frames{0%{-webkit-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}.badge[_ngcontent-ng-c2913155081]{padding-left:9px;padding-right:9px;-webkit-border-radius:9px;-moz-border-radius:9px;border-radius:9px}.label-warning[href][_ngcontent-ng-c2913155081], .badge-warning[href][_ngcontent-ng-c2913155081]{background-color:#c67605}#lblCartCount[_ngcontent-ng-c2913155081]{font-size:10px;color:#fff;vertical-align:top;margin-left:-10px;margin-top:-5px}.dropdown-menu[_ngcontent-ng-c2913155081]   li[_ngcontent-ng-c2913155081]{position:relative}.dropdown-menu[_ngcontent-ng-c2913155081]   .dropdown-submenu[_ngcontent-ng-c2913155081]{display:none;position:absolute;right:100%;top:-7px}.dropdown-menu[_ngcontent-ng-c2913155081] &gt; li[_ngcontent-ng-c2913155081]:hover &gt; .dropdown-submenu[_ngcontent-ng-c2913155081]{display:block}.accordion[_ngcontent-ng-c2913155081] &gt; ul[_ngcontent-ng-c2913155081]{display:none}.accordion[_ngcontent-ng-c2913155081]:hover   ul[_ngcontent-ng-c2913155081]{display:block}.reports.nav-item.dropdown[_ngcontent-ng-c2913155081]:hover   .dropdown-menu[_ngcontent-ng-c2913155081]{display:block;right:100%;left:auto;margin-top:-25px}.testing-notification-bar[_ngcontent-ng-c2913155081]{background:linear-gradient(90deg,#205d96,#1a4f7f);color:#fff;padding:10px 0;text-align:center;font-size:14px;box-shadow:0 2px 4px #0000001a}.testing-notification-bar[_ngcontent-ng-c2913155081]   .container[_ngcontent-ng-c2913155081]{display:flex;justify-content:center;align-items:center;gap:15px}.testing-notification-bar[_ngcontent-ng-c2913155081]   span[_ngcontent-ng-c2913155081]{font-weight:500}.testing-guide-btn[_ngcontent-ng-c2913155081]{background:#fff;color:#205d96;border:none;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s ease}.testing-guide-btn[_ngcontent-ng-c2913155081]:hover{background:#f0f0f0;transform:translateY(-1px);box-shadow:0 2px 6px #00000026}.bug-hunting-btn[_ngcontent-ng-c2913155081]{background:#dc3545;color:#fff;border:none;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s ease}.bug-hunting-btn[_ngcontent-ng-c2913155081]:hover{background:#c82333;transform:translateY(-1px);box-shadow:0 2px 6px #00000026}&lt;/style&gt;<br/>
+  &lt;style&gt;.ptt-explore-heading[_ngcontent-ng-c854836465]{font-size:.7rem;letter-spacing:.04em}.ptt-explore-link[_ngcontent-ng-c854836465]{color:inherit;text-decoration:none}.ptt-explore-link[_ngcontent-ng-c854836465]:hover   .ptt-explore-title[_ngcontent-ng-c854836465], .ptt-explore-link[_ngcontent-ng-c854836465]:focus-visible   .ptt-explore-title[_ngcontent-ng-c854836465]{text-decoration:underline}.ptt-explore-icon[_ngcontent-ng-c854836465]{flex:none;width:1.1rem;font-size:1rem;margin-top:.15rem}&lt;/style&gt;<br/>
+  &lt;style&gt;.chat-widget[_ngcontent-ng-c3541368737]{position:fixed;bottom:20px;right:20px;z-index:9999;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,sans-serif}.chat-toggle-btn[_ngcontent-ng-c3541368737]{width:56px;height:56px;border-radius:50%;background-color:#1e6098;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 4px 12px #1e609866;transition:transform .2s ease,box-shadow .2s ease}.chat-toggle-btn[_ngcontent-ng-c3541368737]:hover{transform:scale(1.05);box-shadow:0 6px 16px #1e609880}.chat-toggle-btn[_ngcontent-ng-c3541368737]:active{transform:scale(.95)}.chat-window[_ngcontent-ng-c3541368737]{width:360px;height:500px;background:#fff;border-radius:12px;box-shadow:0 8px 32px #00000026;display:flex;flex-direction:column;overflow:hidden;animation:_ngcontent-ng-c3541368737_slideUp .3s ease}@keyframes _ngcontent-ng-c3541368737_slideUp{0%{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.chat-header[_ngcontent-ng-c3541368737]{background-color:#1e6098;color:#fff;padding:16px;display:flex;justify-content:space-between;align-items:center}.chat-title[_ngcontent-ng-c3541368737]{font-weight:600;font-size:16px}.chat-close-btn[_ngcontent-ng-c3541368737]{background:none;border:none;color:#fff;cursor:pointer;padding:4px;display:flex;align-items:center;justify-content:center;opacity:.8;transition:opacity .2s ease}.chat-close-btn[_ngcontent-ng-c3541368737]:hover{opacity:1}.chat-messages[_ngcontent-ng-c3541368737]{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;background-color:#f8f9fa}.chat-message[_ngcontent-ng-c3541368737]{max-width:85%;display:flex;flex-direction:column;gap:8px}.bot-message[_ngcontent-ng-c3541368737]{align-self:flex-start}.user-message[_ngcontent-ng-c3541368737]{align-self:flex-end}.message-content[_ngcontent-ng-c3541368737]{padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.4}.bot-message[_ngcontent-ng-c3541368737]   .message-content[_ngcontent-ng-c3541368737]{background-color:#fff;color:#333;border:1px solid #e0e0e0;border-bottom-left-radius:4px}.user-message[_ngcontent-ng-c3541368737]   .message-content[_ngcontent-ng-c3541368737]{background-color:#1e6098;color:#fff;border-bottom-right-radius:4px}.message-content.loading[_ngcontent-ng-c3541368737]{display:flex;gap:4px;padding:12px 16px}.dot[_ngcontent-ng-c3541368737]{width:8px;height:8px;background-color:#999;border-radius:50%;animation:_ngcontent-ng-c3541368737_bounce 1.4s infinite ease-in-out both}.dot[_ngcontent-ng-c3541368737]:nth-child(1){animation-delay:-.32s}.dot[_ngcontent-ng-c3541368737]:nth-child(2){animation-delay:-.16s}@keyframes _ngcontent-ng-c3541368737_bounce{0%,80%,to{transform:scale(0)}40%{transform:scale(1)}}.action-buttons[_ngcontent-ng-c3541368737]{display:flex;flex-wrap:wrap;gap:8px}.action-btn[_ngcontent-ng-c3541368737]{background-color:#fff;border:1px solid #1E6098;color:#1e6098;padding:8px 14px;border-radius:20px;font-size:13px;cursor:pointer;transition:background-color .2s ease,color .2s ease}.action-btn[_ngcontent-ng-c3541368737]:hover{background-color:#1e6098;color:#fff}.product-list[_ngcontent-ng-c3541368737]{display:flex;flex-direction:column;gap:8px;margin-top:4px}.product-card[_ngcontent-ng-c3541368737]{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:8px;cursor:pointer;transition:border-color .2s ease,box-shadow .2s ease}.product-card[_ngcontent-ng-c3541368737]:hover{border-color:#1e6098;box-shadow:0 2px 8px #1e609826}.product-image[_ngcontent-ng-c3541368737]{width:48px;height:48px;object-fit:cover;border-radius:6px;background-color:#f0f0f0}.product-info[_ngcontent-ng-c3541368737]{flex:1;min-width:0}.product-name[_ngcontent-ng-c3541368737]{font-size:13px;font-weight:500;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.product-price[_ngcontent-ng-c3541368737]{font-size:12px;color:#1e6098;font-weight:600}.chat-input-container[_ngcontent-ng-c3541368737]{display:flex;gap:8px;padding:12px;border-top:1px solid #e0e0e0;background:#fff}.chat-input[_ngcontent-ng-c3541368737]{flex:1;border:1px solid #e0e0e0;border-radius:20px;padding:10px 16px;font-size:14px;outline:none;transition:border-color .2s ease}.chat-input[_ngcontent-ng-c3541368737]:focus{border-color:#1e6098}.chat-send-btn[_ngcontent-ng-c3541368737]{width:40px;height:40px;border-radius:50%;background-color:#1e6098;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;transition:background-color .2s ease,transform .1s ease}.chat-send-btn[_ngcontent-ng-c3541368737]:hover:not(:disabled){background-color:#175a8a}.chat-send-btn[_ngcontent-ng-c3541368737]:active:not(:disabled){transform:scale(.95)}.chat-send-btn[_ngcontent-ng-c3541368737]:disabled{background-color:#ccc;cursor:not-allowed}.hidden-file-input[_ngcontent-ng-c3541368737]{display:none}@media (max-width: 420px){.chat-widget[_ngcontent-ng-c3541368737]{bottom:10px;right:10px}.chat-window[_ngcontent-ng-c3541368737]{width:calc(100vw - 20px);height:calc(100vh - 80px);max-height:600px}}&lt;/style&gt;<br/>
+  &lt;style&gt;.live-widget[_ngcontent-ng-c4222135567]{position:fixed;bottom:20px;left:20px;z-index:9998;font-family:inherit}.live-toggle-btn[_ngcontent-ng-c4222135567]{position:relative;width:56px;height:56px;border-radius:50%;border:none;background:#dc3545;color:#fff;cursor:pointer;box-shadow:0 4px 12px #00000040;display:flex;align-items:center;justify-content:center;transition:transform .15s ease,background .15s ease}.live-toggle-btn[_ngcontent-ng-c4222135567]:hover{transform:scale(1.05)}.live-toggle-btn.active[_ngcontent-ng-c4222135567]{background:#495057}.live-badge[_ngcontent-ng-c4222135567]{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:#212529;color:#fff;font-size:11px;font-weight:700;line-height:20px;text-align:center}.live-window[_ngcontent-ng-c4222135567]{width:320px;max-width:calc(100vw - 40px);background:#fff;border-radius:12px;box-shadow:0 8px 28px #00000038;overflow:hidden;margin-bottom:12px;display:flex;flex-direction:column;max-height:70vh}.live-header[_ngcontent-ng-c4222135567]{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#212529;color:#fff}.live-title[_ngcontent-ng-c4222135567]{display:flex;align-items:center;gap:8px;font-weight:600}.live-dot[_ngcontent-ng-c4222135567]{width:9px;height:9px;border-radius:50%;background:#6c757d}.live-dot.on[_ngcontent-ng-c4222135567]{background:#28d17c;box-shadow:0 0 #28d17cb3;animation:_ngcontent-ng-c4222135567_live-pulse 1.8s infinite}@keyframes _ngcontent-ng-c4222135567_live-pulse{0%{box-shadow:0 0 #28d17c99}70%{box-shadow:0 0 0 8px #28d17c00}to{box-shadow:0 0 #28d17c00}}.live-close-btn[_ngcontent-ng-c4222135567]{background:none;border:none;color:#fff;font-size:22px;line-height:1;cursor:pointer;opacity:.85}.live-close-btn[_ngcontent-ng-c4222135567]:hover{opacity:1}.live-stats[_ngcontent-ng-c4222135567]{display:flex;gap:8px;padding:12px 14px;background:#f8f9fa;border-bottom:1px solid #e9ecef}.live-stats[_ngcontent-ng-c4222135567] &gt; div[_ngcontent-ng-c4222135567]{flex:1;display:flex;flex-direction:column}.live-stat-value[_ngcontent-ng-c4222135567]{font-size:20px;font-weight:700;color:#212529}.live-stat-label[_ngcontent-ng-c4222135567]{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:#868e96}.live-feed[_ngcontent-ng-c4222135567]{overflow-y:auto;padding:6px 0;flex:1}.live-item[_ngcontent-ng-c4222135567]{padding:8px 14px;border-bottom:1px solid #f1f3f5;animation:_ngcontent-ng-c4222135567_live-slide-in .35s ease}.live-item[_ngcontent-ng-c4222135567]:last-child{border-bottom:none}@keyframes _ngcontent-ng-c4222135567_live-slide-in{0%{opacity:0;transform:translateY(-6px);background:#fff5f5}to{opacity:1;transform:translateY(0);background:transparent}}.live-item-main[_ngcontent-ng-c4222135567]{display:flex;align-items:baseline;justify-content:space-between;gap:8px}.live-item-name[_ngcontent-ng-c4222135567]{font-weight:600;color:#212529;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.live-badge-tag[_ngcontent-ng-c4222135567]{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;vertical-align:middle}.live-badge-tag.sold-out[_ngcontent-ng-c4222135567]{background:#f1d0d0;color:#b02a37}.live-badge-tag.low-stock[_ngcontent-ng-c4222135567]{background:#fff3cd;color:#997404}.live-item-amount[_ngcontent-ng-c4222135567]{font-weight:700;color:#dc3545;white-space:nowrap}.live-item-sub[_ngcontent-ng-c4222135567]{display:flex;justify-content:space-between;gap:8px;margin-top:2px;font-size:12px;color:#868e96}.live-empty[_ngcontent-ng-c4222135567]{padding:28px 14px;text-align:center;color:#adb5bd;font-size:13px}.live-footer[_ngcontent-ng-c4222135567]{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;background:#f8f9fa;border-top:1px solid #e9ecef;font-size:11px;color:#868e96}.live-clear-btn[_ngcontent-ng-c4222135567]{background:none;border:none;color:#dc3545;font-size:12px;font-weight:600;cursor:pointer;padding:0}&lt;/style&gt;<br/>
+  &lt;style&gt;.google-sign-in-button[_ngcontent-ng-c713820125]{cursor:pointer;transition:background-color .3s,box-shadow .3s;padding:9px 16px 9px 42px;border:none;border-radius:3px;box-shadow:0 -1px #0000000a,0 1px 1px #00000040;color:#757575;font-size:14px;font-weight:500;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);background-color:#fff;background-repeat:no-repeat;background-position:12px 11px}.google-sign-in-button[_ngcontent-ng-c713820125]:hover{box-shadow:0 -1px #0000000a,0 2px 4px #00000040}.google-sign-in-button[_ngcontent-ng-c713820125]:active{background-color:#eee;outline:none;box-shadow:0 -1px #0000000a,0 2px 4px #00000040,0 0 0 3px #c8dafc}.google-sign-in-button[_ngcontent-ng-c713820125]:disabled{filter:grayscale(100%);background-color:#ebebeb;box-shadow:0 -1px #0000000a,0 1px 1px #00000040;cursor:not-allowed}.container[_ngcontent-ng-c713820125]{margin-top:50px;margin-bottom:50px}.separator[_ngcontent-ng-c713820125]{display:flex;align-items:center;text-align:center;padding:3% 10%}.separator[_ngcontent-ng-c713820125]:before, .separator[_ngcontent-ng-c713820125]:after{content:"";flex:1;border-bottom:1px solid #000}.separator[_ngcontent-ng-c713820125]:not(:empty):before{margin-right:.25em}.separator[_ngcontent-ng-c713820125]:not(:empty):after{margin-left:.25em}&lt;/style&gt;<br/>
+ &lt;/head&gt;<br/>
+ &lt;body&gt;&lt;app-root ng-version="20.0.5"&gt;<br/>
+   &lt;div data-test="notification-bar" class="text-center p-2 bg-dark text-white"&gt;<br/>
+    View the &lt;a target="_blank" href="https://testsmith-io.github.io/practice-software-testing/#/" class="text-white"&gt;Documentation&lt;/a&gt; for this application.<br/>
+   &lt;/div&gt;<br/>
+   &lt;app-header _nghost-ng-c2913155081=""&gt;<br/>
+    &lt;div _ngcontent-ng-c2913155081="" class="testing-notification-bar"&gt;<br/>
+     &lt;div _ngcontent-ng-c2913155081="" class="container"&gt;<br/>
+      &lt;span _ngcontent-ng-c2913155081=""&gt;Practice Black Box Testing &amp; Bug Hunting&lt;/span&gt;&lt;button _ngcontent-ng-c2913155081="" class="testing-guide-btn"&gt; Testing Guide &lt;/button&gt;&lt;button _ngcontent-ng-c2913155081="" class="bug-hunting-btn"&gt; 🐛 Bug Hunting &lt;/button&gt;&lt;!----&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+    &lt;nav _ngcontent-ng-c2913155081="" class="navbar navbar-expand-lg navbar-light bg-light"&gt;<br/>
+     &lt;div _ngcontent-ng-c2913155081="" class="container"&gt;<br/>
+      &lt;a _ngcontent-ng-c2913155081="" href="/" class="navbar-brand" title="Practicar Pruebas de Software - Toolshop"&gt;<br/>
+       &lt;svg _ngcontent-ng-c2913155081="" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="55 35 808.6 160" xml:space="preserve" style="width: 280px;"&gt;<br/>
+        &lt;g _ngcontent-ng-c2913155081="" transform="translate(-100 -390)"&gt;<br/>
+         &lt;path _ngcontent-ng-c2913155081="" d="m832.2 581h-194.8c-12.1 0-21.8-9.8-21.8-21.8v-19c0-12.1 9.8-21.8 21.8-21.8h194.8c12.1 0 21.8 9.8 21.8 21.8v19c0 12-9.8 21.8-21.8 21.8z" class="st0"&gt;&lt;/path&gt;<br/>
+         &lt;path _ngcontent-ng-c2913155081="" d="m685.3 562.1-1-0.1-0.3-0.1-0.3-0.3-0.1-0.6-0.1-0.9v-0.4l-0.1-0.5v-0.9l0.1-0.5v-0.6l0.1-0.5v-0.4-0.4-0.5-0.5-0.5-1-0.5l0.1-0.5v-0.5l-0.1-0.4 0.1-0.5v-0.5-1l-0.1-0.5 0.1-0.5v-0.4l0.1-0.4v-0.6-0.4l0.1-0.5v-0.2l-0.1-0.5v-0.6-0.4-0.5-0.5-0.3-0.6l-0.1-0.3 0.1-1v-0.5-0.4-0.4-0.6l-0.1-0.4 0.1-0.4-0.1-0.6v-0.5-0.5l0.1-0.4-0.1-0.6v-0.9l0.2-0.3 0.3-0.3 0.4-0.1 0.9-0.1h0.5 0.4 0.6 0.3 0.5l0.5-0.1 0.5 0.1h0.3 0.5 0.5l0.5-0.1h0.6 0.4l0.4 0.1 0.5-0.1 0.5 0.1h0.5l0.9-0.1 0.9 0.1h0.4l0.5 0.1 0.9 0.2 0.5 0.1 0.3 0.1 0.5 0.1 0.5 0.2 1.2 0.6 0.3 0.2 0.4 0.3 0.5 0.2 1 1 0.2 0.3 0.3 0.3 0.2 0.4 0.3 0.4 0.2 0.5 0.4 0.8 0.1 0.4 0.4 1 0.1 0.3v0.6l0.1 0.3 0.2 1v0.4 1l-0.1 0.4v0.5 0.5 0.4 0.4l-0.1 0.6v0.5 0.5l-0.1 0.3 0.1 0.5v0.5l-0.1 0.6v0.4 1 0.8l-0.1 0.6-0.1 0.4v0.5l-0.2 0.5-0.1 0.4-0.2 0.5-0.1 0.4-0.5 0.9-0.2 0.3-0.2 0.4-0.3 0.5-1 0.9-0.3 0.3-0.4 0.3-0.3 0.3-0.4 0.3-0.3 0.2-0.4 0.1-0.3 0.3-0.4 0.1-0.5 0.2-0.4 0.1-0.5 0.1-0.4 0.1-0.6 0.1h-0.3l-0.6 0.1h-1l-0.4 0.2h-0.9-0.4-0.6l-0.4-0.1-0.4 0.1h-0.5l-0.6 0.1h-0.3l-0.5-0.1-0.4-0.1h-0.5l-0.4 0.1-0.4-0.1-0.5 0.1h-1l-0.5-0.1-0.4 0.1zm5.9-4.6h0.5 0.5 0.5 0.6l0.9-0.1h0.5 0.4l1-0.2 1-0.4 0.4-0.2 0.5-0.2 0.3-0.2 0.4-0.3 0.7-0.7 0.3-0.8 0.2-0.4 0.1-0.4 0.2-0.5 0.1-0.5v-0.5l-0.1-0.9v-0.5-0.3l0.1-0.5v-1-0.4-0.6-0.4-0.6-0.5-0.9-0.6-0.8l-0.1-0.5v-0.6l-0.2-0.3-0.1-0.5-0.2-0.5-0.2-0.3-0.2-0.4-0.3-0.3-0.3-0.4-0.3-0.2-0.5-0.3-0.3-0.2-0.4-0.2-0.5-0.2-0.4-0.2-0.6-0.1h-0.4-0.5l-0.4-0.1-1 0.1h-0.4-0.5l-0.5-0.1-0.6 0.1h-0.3l-1-0.1-0.5 0.1-0.6-0.1-0.3 0.1-0.1 0.1v0.4 0.5l-0.1 0.3 0.1 0.5v0.5 0.4 0.6l0.1 0.3v0.6 0.5 0.4l-0.1 0.5v0.4 0.5 0.5l0.1 0.5v0.3l-0.1 0.5v0.5l0.1 0.6-0.1 0.4v0.5 0.6l0.1 0.4-0.1 0.9 0.1 0.5v0.5 0.5 0.5l-0.1 0.4v0.4l0.1 0.6-0.1 0.4 0.1 0.4-0.1 0.5v0.5 0.4 0.5 0.3l0.1 0.1h0.4l1-0.1h0.4l0.6 0.1 0.1-0.1z" class="st1"&gt;&lt;/path&gt;<br/>
+         &lt;path _ngcontent-ng-c2913155081="" d="m715.5 562.1-0.5-0.1-0.5 0.1-0.9-0.1-0.5 0.1h-0.6-0.5-0.5-0.8l-0.5-0.2-0.2-0.3-0.2-0.5v-0.8l0.1-0.6v-0.4l-0.1-0.5v-1.4l0.1-0.4-0.1-0.5 0.1-0.5v-0.6l0.1-0.4v-0.4-0.5-0.5l-0.1-0.5 0.1-0.4-0.1-0.6 0.1-0.4v-0.5l-0.1-0.6 0.1-0.4-0.1-0.6v-0.4-0.5-0.4-0.5l-0.1-0.6 0.1-0.4-0.1-0.5v-0.4-0.5l0.2-0.4 0.1-0.4-0.1-0.4v-1-0.5-0.5-0.4l-0.1-0.5v-0.6-0.4-0.9l0.1-0.4-0.1-0.6v-0.4-0.6-0.4l0.1-0.6v-0.4-0.9l0.2-0.4 0.3-0.4 0.3-0.1h1l0.4-0.1h0.5l0.5 0.1h0.5 0.5l0.9 0.1 0.4-0.1h0.5l0.4 0.1 0.5-0.1h0.4 0.5 0.5l0.4 0.1 0.6-0.1 0.5 0.1h0.4l0.6-0.1h0.5 0.4l0.4 0.1h0.5l0.4-0.1 0.5 0.1h0.5l0.4-0.1h0.6 0.5l0.9-0.1 0.9 0.1 0.5 0.1 0.5 0.7v0.9 0.5l-0.1 0.5 0.1 0.9-0.2 0.4-0.4 0.4-0.4 0.1-0.8-0.1h-1.4l-0.6 0.1h-0.4l-0.5-0.1-1 0.1h-0.4l-0.5-0.1-0.5 0.1-0.4-0.1-0.4 0.1-0.4 0.3h-0.5l-0.4-0.1h-0.9l-1 0.1h-1l-0.5-0.1-0.4 0.1h-0.3v0.4l-0.1 0.4v0.4 0.4 0.5l0.1 0.5v0.5l-0.1 0.4v0.5l0.1 0.5-0.1 0.4 0.1 0.5-0.1 0.4v0.5 0.4h0.1 0.3l0.6 0.1h0.3 0.5 0.6 0.5l0.4-0.1 0.4 0.1h0.6l0.5-0.1h0.4 1 0.4 0.5l0.4 0.1 0.5-0.1 0.5 0.1 0.5-0.1 0.4 0.1h0.5l0.9-0.1 0.4 0.2 0.4 0.3v0.3l0.1 1v0.4l-0.1 0.6v0.9l-0.1 0.5-0.2 0.3-0.5 0.2h-0.9-0.5-0.4-0.5l-0.5 0.1h-0.4l-0.5-0.1h-0.5-0.4-0.4-0.5-0.5l-0.4-0.1-0.5 0.1h-0.3l-0.5-0.1-0.5 0.1h-0.4l-0.5 0.1h-0.5-0.4-0.3l-0.1 0.1v0.3 0.5l-0.1 0.5v0.4 0.6l0.1 0.5v0.4 0.5l-0.1 0.4 0.1 0.5v0.9l-0.1 0.6 0.1 0.5-0.1 0.3 0.1 0.1h0.4l0.4-0.1 0.5 0.1h0.4 0.6l0.4 0.1 0.6-0.1h0.4l0.5 0.1h1l0.6-0.1h0.5 0.4 0.5l0.4 0.1 1.4-0.1 0.5 0.1 0.6-0.1h0.5l0.4 0.1 0.5-0.1h0.5 0.9l0.4 0.2 0.3 0.3 0.1 0.5 0.1 0.9v0.5l-0.1 0.4-0.1 0.9-0.1 0.5-0.3 0.3-1.4 0.1-0.4 0.1-0.5-0.1-0.4 0.1-0.8-0.3-0.6 0.1h-0.4l-0.4-0.1h-0.5-0.6l-0.4 0.1h-0.5-0.4l-0.5-0.1h-0.4l-0.6 0.1h-0.5-1.2-0.5-0.5-0.5-0.4-0.6z" class="st1"&gt;&lt;/path&gt;<br/>
+         &lt;path _ngcontent-ng-c2913155081="" d="m754.5 543.7-0.3 0.3-0.2 0.4-0.2 0.5-0.2 0.4-0.3 0.3-0.1 0.5-0.2 0.5-0.3 0.4-0.3 0.3-0.1 0.5-0.6 0.7-0.6 1.2-0.3 0.3-0.2 0.4-0.3 0.5-0.2 0.4-0.3 0.3-0.2 0.5-0.1 0.3-0.3 0.4-0.2 0.4-0.4 0.4-0.8 1.6-0.3 0.3-0.6 0.2h-0.7-0.2l-0.9 0.1-0.5-0.2-0.3-0.3-0.5-0.7-0.2-0.4-0.2-0.5-0.2-0.3-0.3-0.5-0.6-1.2-0.3-0.3-0.2-0.4-0.3-0.4-0.2-0.4-0.2-0.3-0.3-0.4-0.4-0.8-0.5-0.8-0.3-0.4-0.2-0.4-0.2-0.3-0.2-0.5-0.2-0.3-0.3-0.4-0.2-0.5-0.4-0.8 0.1-0.3-0.2-0.3-0.2 0.1v0.3 0.2 0.6 0.3 0.4 0.4 1.4 0.4 0.6l0.1 0.8-0.1 0.6 0.1 0.5v0.3 0.5 0.5l-0.1 0.5 0.1 0.4-0.1 1 0.1 0.4v0.6 0.4l0.1 0.5-0.1 0.5 0.1 0.4v0.6 0.5l-0.1 0.4v0.5 0.5 0.4 0.5 0.5 0.9l-0.2 0.5-0.3 0.2-0.5 0.1-0.9 0.1-0.4 0.1-0.4-0.1h-0.9l-0.4-0.1-0.4-0.4v-0.3l-0.2-0.9 0.1-0.5v-0.4-0.6-0.5-0.4l0.1-0.5v-0.4-0.6-0.4l-0.1-1 0.1-0.4v-0.6l-0.1-0.3 0.1-0.6v-0.5-0.3l-0.1-0.6v-0.3-0.6-0.4l-0.1-0.6 0.1-0.4v-0.4-0.5-0.5l0.1-0.5v-0.9-0.5l-0.1-0.5 0.1-0.4-0.1-0.5v-0.4-0.5l0.1-0.4v-0.5-1l-0.1-0.4 0.1-0.5-0.1-0.4v-0.5-0.5-0.5l0.1-0.5v-0.6l-0.1-0.4v-0.6-0.4-0.6l0.1-0.8 0.1-0.4 0.3-0.4 0.4-0.1 0.9-0.1h0.4 0.4 0.9l0.4 0.1 0.4 0.2 0.3 0.4 0.4 0.8 0.3 0.3 0.4 0.8 0.2 0.5 0.3 0.4 0.2 0.4 0.3 0.3 0.2 0.4 0.2 0.5 0.2 0.4 0.2 0.3 0.6 1.2 0.3 0.4 0.4 0.7 0.3 0.5 0.2 0.4 0.2 0.3 0.3 0.4 0.2 0.4 0.3 0.4 0.2 0.4 0.3 0.4 0.9 1.8 0.2 0.3 0.2 0.5 0.2 0.4 0.3 0.4 0.2 0.6h0.2l0.4-0.7 0.3-0.4 0.1-0.4 0.3-0.4 0.2-0.4 0.3-0.3 0.2-0.5 0.2-0.4 0.3-0.4 0.3-0.5 0.3-0.3 0.2-0.5 0.4-0.8 0.3-0.3 0.2-0.4 0.3-0.4 0.1-0.5 0.3-0.3 0.2-0.6 0.2-0.3 0.3-0.4 0.2-0.4 0.4-0.4 0.1-0.5 0.4-0.4 0.2-0.4 0.2-0.5 0.3-0.3 0.2-0.6 0.3-0.3 0.2-0.4 0.2-0.5 0.6-0.7 0.2-0.3 0.3-0.2 0.5-0.1h0.9 0.5 0.4 0.9l0.4 0.2 0.4 0.3 0.2 0.4v0.9 0.5l0.1 0.3-0.1 0.5v1l0.1 0.5v0.4l-0.1 0.6v0.9l0.1 0.6v0.9l-0.1 0.5v0.4 0.5l0.1 0.5v0.4l-0.1 0.5 0.1 0.4v0.6 0.4l-0.1 0.5v0.5l0.1 0.4v0.5 0.4l0.1 0.6v0.4 1 0.5 0.5 0.6 0.3l0.1 0.6v0.4 0.5 0.6l-0.1 0.5v0.6l0.1 0.4v0.5 0.5 0.4l0.1 0.4v0.6l0.1 0.5v0.4l-0.1 0.5v0.5 0.9l-0.2 0.4-0.3 0.4h-0.3-1-1l-1-0.1h-0.4l-0.2-0.3-0.2-0.5v-0.9-0.4-0.5-0.4l0.1-0.5-0.1-0.5v-0.6-0.4-0.6-0.4-0.4-0.6-0.3l-0.1-0.6v-0.5-0.8-0.5-0.4-0.4l0.1-0.5v-0.4l-0.1-0.5 0.1-0.6v-0.5l-0.1-0.9 0.1-0.5v-0.4-0.4l0.1-0.6v-0.3l0.1-0.5v-0.5l0.1-0.5v-1l-0.2-0.1-1 0.2z" class="st1"&gt;&lt;/path&gt;<br/>
+         &lt;path _ngcontent-ng-c2913155081="" d="m775.1 562.7h-0.4l-0.4-0.1-0.5-0.1h-0.4l-0.6-0.1h-0.5l-0.8-0.2-0.5-0.2-0.3-0.2-0.9-0.2-0.5-0.2-0.4-0.3-0.3-0.1-0.4-0.4-0.4-0.2-0.2-0.4-0.3-0.2-0.4-0.3-0.3-0.4-0.3-0.3-0.2-0.4-0.3-0.4-0.2-0.4-0.1-0.5-0.2-0.5-0.4-0.7v-0.5l-0.2-0.4-0.1-0.6v-0.9l-0.1-0.4v-1-0.4-0.5-1-0.5-1l-0.1-0.4v-0.4-0.5-0.6-1.8l0.1-0.6v-0.9-0.4-0.4l0.2-0.9 0.1-0.5v-0.5l0.2-0.3v-0.5l0.6-1.2 0.3-0.3 0.2-0.4 0.3-0.3 0.2-0.4 0.4-0.3 0.6-0.6 0.4-0.3 0.4-0.2 0.3-0.3 0.4-0.3 0.4-0.1 0.4-0.3 0.4-0.1 1-0.4 0.4-0.1 0.5-0.2 0.5-0.1h0.9l0.4-0.2 0.5 0.1h0.4l1-0.1h0.5 0.4l1 0.1 0.4 0.2h0.5l0.4 0.2 0.6 0.1 0.5 0.2h0.4l0.8 0.4 0.5 0.3 0.4 0.2 0.3 0.3 0.5 0.2 0.2 0.2 0.5 0.4 0.6 0.6 0.4 0.3 0.2 0.3 0.3 0.5 0.8 1.6 0.1 0.4 0.2 0.5 0.1 0.5 0.2 0.4v0.4l0.1 0.4 0.1 0.9v1 0.5 0.5 0.5 0.4l0.1 0.6v0.5 0.5 0.4l0.1 0.5-0.1 0.5v0.5 1.1 0.4l-0.1 0.5 0.1 0.4-0.1 1v0.5l-0.1 0.4v0.6 0.4 0.4l-0.2 0.5-0.1 0.5-0.2 0.5-0.2 0.4-0.1 0.4-0.3 0.5-0.2 0.4-0.3 0.2-0.2 0.4-0.3 0.4-0.4 0.3-0.6 0.6-0.5 0.2-0.3 0.2-0.5 0.3-0.4 0.3-0.3 0.2-0.4 0.2-0.5 0.2-0.9 0.2-0.4 0.1-0.5 0.2-0.5 0.1-0.4 0.1-0.5 0.1-0.9 0.1-0.5-0.1-1.1-0.4zm1.6-4.6 0.5-0.1 0.4-0.1 0.5-0.1 0.6-0.1 0.3-0.2 0.4-0.2 0.5-0.2 0.4-0.4 0.2-0.3 0.4-0.3 0.2-0.3 0.3-0.5 0.2-0.4 0.2-0.5v-0.5l0.1-0.3 0.1-0.6v-0.9l-0.1-0.5 0.1-0.6v-0.5-0.4-0.5-0.4-0.5l0.1-0.4-0.1-0.5v-0.5-1.1-0.5-0.4l-0.1-0.5 0.1-0.4v-0.9-0.5-0.5l-0.4-0.8-0.2-0.5-0.3-0.4-0.2-0.5-0.7-0.7-0.4-0.2-0.5-0.2-0.4-0.3-0.3-0.2h-0.5l-0.5-0.2h-0.5-0.5l-0.4-0.2-1.5 0.1-0.5 0.1h-0.6l-0.3 0.2-0.6 0.1-0.4 0.2-0.5 0.2-0.7 0.6-0.4 0.3-0.3 0.3-0.3 0.4-0.4 0.8-0.2 0.5v0.5l-0.2 0.4 0.1 0.6v0.9l-0.1 0.5v0.6 0.4 0.5l0.1 0.5-0.1 0.5 0.1 0.5-0.1 0.6v0.5l0.1 0.5v0.4 0.5 0.5 1 0.5 0.9l0.2 0.5v0.4l0.2 0.5 0.1 0.3 0.3 0.4 0.1 0.5 0.3 0.4 1 1 0.4 0.2 0.3 0.2 0.6 0.2 0.4 0.2 0.5 0.2h0.4l0.5 0.1h0.4 1l0.6-0.4z" class="st1"&gt;&lt;/path&gt;<br/>
+        &lt;/g&gt;&lt;polygon _ngcontent-ng-c2913155081="" points="119.8,118.9 109,109 103.8,114.4 120.9,129.3 149.6,97.9 144.1,92.3 	" class="st0"&gt;&lt;/polygon&gt;&lt;g _ngcontent-ng-c2913155081="" class="gear"&gt;<br/>
+         &lt;path _ngcontent-ng-c2913155081="" d="M178.7,123.1l20.9-3.3V99.7l-20.9-4.2c-1.2-4.4-2.9-8.7-5.2-12.6L186,65.8l-14.2-14.2l-17.7,11.8l0,0<br/>
+		c-3.9-2.2-8.1-4-12.4-5.2l-4.2-20.9h-20.1l-3.2,20.9l0,0c-4.5,1.2-8.8,3-12.8,5.2l0,0L83.7,51.6L69.5,65.8L82,82.9l0,0<br/>
+		c-2.2,3.9-4,8.1-5.2,12.5l-20.9,4.2v20.1l20.9,3.3l0,0c1.2,4.4,3,8.6,5.2,12.5l0,0l-11.8,17.7l14.2,14.2l17.1-12.5<br/>
+		c3.9,2.2,8.1,4,12.6,5.2l0,0l3.2,20.8h20.1l4.2-20.9c4.4-1.2,8.4-2.9,12.3-5.1l17.1,12.5l14.2-14.2l-11.8-17.7<br/>
+		C175.7,131.6,177.5,127.5,178.7,123.1L178.7,123.1z M127.7,150.4c-22.8,0-41.3-18.5-41.3-41.3s18.5-41.3,41.3-41.3<br/>
+		S169,86.3,169,109.1S150.5,150.4,127.7,150.4z" class="st3"&gt;&lt;/path&gt;<br/>
+        &lt;/g&gt;&lt;path _ngcontent-ng-c2913155081="" d="M231.8,77.8h59v8.8h-25.1v50.1h-8.8V86.6h-25.1V77.8z" class="st3"&gt;&lt;/path&gt;&lt;path _ngcontent-ng-c2913155081="" d="M307.4,77.8H345c2.9,0,5.5,1,7.5,3.1c2.1,2.1,3.1,4.6,3.1,7.5v37.7c0,2.9-1,5.5-3.1,7.5<br/>
+		c-2.1,2.1-4.6,3.1-7.5,3.1h-37.7c-2.9,0-5.5-1-7.5-3.1c-2.1-2.1-3.1-4.6-3.1-7.5V88.4c0-2.9,1-5.5,3.1-7.5<br/>
+		C301.9,78.8,304.4,77.8,307.4,77.8z M307.4,127.9H345c0.5,0,0.9-0.2,1.3-0.5c0.4-0.4,0.5-0.8,0.5-1.3V88.4c0-0.5-0.2-0.9-0.5-1.3<br/>
+		c-0.4-0.4-0.8-0.5-1.3-0.5h-37.7c-0.5,0-0.9,0.2-1.3,0.5c-0.4,0.4-0.5,0.8-0.5,1.3v37.7c0,0.5,0.2,0.9,0.5,1.3<br/>
+		C306.4,127.8,306.9,127.9,307.4,127.9z" class="st3"&gt;&lt;/path&gt;&lt;path _ngcontent-ng-c2913155081="" d="M375.2,77.8h37.7c2.9,0,5.5,1,7.5,3.1c2.1,2.1,3.1,4.6,3.1,7.5v37.7c0,2.9-1,5.5-3.1,7.5<br/>
+		c-2.1,2.1-4.6,3.1-7.5,3.1h-37.7c-2.9,0-5.5-1-7.5-3.1c-2.1-2.1-3.1-4.6-3.1-7.5V88.4c0-2.9,1-5.5,3.1-7.5<br/>
+		C369.7,78.8,372.2,77.8,375.2,77.8z M375.2,127.9h37.7c0.5,0,0.9-0.2,1.3-0.5c0.4-0.4,0.5-0.8,0.5-1.3V88.4c0-0.5-0.2-0.9-0.5-1.3<br/>
+		c-0.4-0.4-0.8-0.5-1.3-0.5h-37.7c-0.5,0-0.9,0.2-1.3,0.5c-0.4,0.4-0.5,0.8-0.5,1.3v37.7c0,0.5,0.2,0.9,0.5,1.3<br/>
+		C374.3,127.8,374.7,127.9,375.2,127.9z" class="st3"&gt;&lt;/path&gt;&lt;path _ngcontent-ng-c2913155081="" d="M432.6,136.8V77.7h8.8v50.2h50.1v8.8h-58.9V136.8z" class="st3"&gt;&lt;/path&gt;&lt;path _ngcontent-ng-c2913155081="" d="M554.9,89.9v5.5H542v-4.8h-33.4v10.3h34.2c3.3,0,6.2,1.2,8.6,3.6c2.4,2.4,3.6,5.2,3.6,8.6v11.6<br/>
+		c0,3.3-1.2,6.2-3.6,8.6c-2.4,2.4-5.2,3.6-8.6,3.6H508c-3.3,0-6.2-1.2-8.6-3.5c-2.4-2.3-3.6-5.2-3.6-8.6v-5.5h12.7v4.8H542v-10.3<br/>
+		h-34c-3.3,0-6.2-1.2-8.6-3.5c-2.4-2.3-3.6-5.2-3.6-8.6V90.1c0-3.4,1.2-6.3,3.6-8.6c2.4-2.3,5.2-3.5,8.6-3.5h34.7<br/>
+		c3.3,0,6.2,1.2,8.6,3.6C553.7,83.7,554.9,86.6,554.9,89.9z" class="st4"&gt;&lt;/path&gt;&lt;path _ngcontent-ng-c2913155081="" d="M611.2,77.8h12.7v59h-12.7v-23.1h-34.8v23.1h-12.7v-59h12.7v23.1h34.8V77.8z" class="st4"&gt;&lt;/path&gt;&lt;path _ngcontent-ng-c2913155081="" d="M645.3,77.8H680c3.3,0,6.2,1.2,8.6,3.6c2.4,2.4,3.6,5.2,3.6,8.6v34.7c0,3.3-1.2,6.2-3.6,8.6<br/>
+		c-2.4,2.4-5.2,3.6-8.6,3.6h-34.7c-3.4,0-6.3-1.2-8.6-3.5s-3.5-5.2-3.5-8.6V90.1c0-3.4,1.2-6.3,3.5-8.6<br/>
+		C639,79,641.9,77.8,645.3,77.8z M645.9,90.6V124h33.4V90.6H645.9z" class="st4"&gt;&lt;/path&gt;&lt;path _ngcontent-ng-c2913155081="" d="M701.2,77.9H748c3.3,0,6.2,1.2,8.6,3.6c2.4,2.4,3.6,5.2,3.6,8.6v15.2c0,3.3-1.2,6.2-3.6,8.6<br/>
+		c-2.4,2.4-5.3,3.6-8.6,3.6l-34.1,0.1c0.2,0,0.2,0.2,0.2,0.5c-0.1,0-0.2,0-0.2-0.1v18.9h-12.7V77.9z M713.8,90.6v14h33.4v-14H713.8z<br/>
+		" class="st4"&gt;&lt;/path&gt;<br/>
+       &lt;/svg&gt;&lt;/a&gt;&lt;button _ngcontent-ng-c2913155081="" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"&gt;&lt;span _ngcontent-ng-c2913155081="" class="navbar-toggler-icon"&gt;&lt;/span&gt;&lt;/button&gt;<br/>
+      &lt;div _ngcontent-ng-c2913155081="" id="navbarSupportedContent" class="collapse navbar-collapse"&gt;<br/>
+       &lt;ul _ngcontent-ng-c2913155081="" role="menubar" aria-label="Main menu" class="navbar-nav ms-auto mb-2 mb-lg-0"&gt;<br/>
+        &lt;li _ngcontent-ng-c2913155081="" role="menuitem" class="nav-item"&gt;&lt;a _ngcontent-ng-c2913155081="" data-test="nav-home" aria-current="page" href="/" class="nav-link active"&gt;Inicio&lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;li _ngcontent-ng-c2913155081="" role="menuitem" class="nav-item dropdown"&gt;&lt;button _ngcontent-ng-c2913155081="" type="button" data-test="nav-categories" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link dropdown-toggle btn-link-style"&gt; Categorías &lt;/button&gt;<br/>
+         &lt;ul _ngcontent-ng-c2913155081="" aria-label="nav-categories" class="dropdown-menu"&gt;<br/>
+          &lt;li _ngcontent-ng-c2913155081=""&gt;&lt;a _ngcontent-ng-c2913155081="" data-test="nav-hand-tools" routerlink="/category/hand-tools" class="dropdown-item" href="/category/hand-tools"&gt;Herramientas manuales&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li _ngcontent-ng-c2913155081=""&gt;&lt;a _ngcontent-ng-c2913155081="" data-test="nav-power-tools" routerlink="/category/power-tools" class="dropdown-item" href="/category/power-tools"&gt;Herramientas eléctricas&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li _ngcontent-ng-c2913155081=""&gt;&lt;a _ngcontent-ng-c2913155081="" data-test="nav-other" routerlink="/category/other" class="dropdown-item" href="/category/other"&gt;Otros&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li _ngcontent-ng-c2913155081=""&gt;&lt;a _ngcontent-ng-c2913155081="" data-test="nav-special-tools" routerlink="/category/special-tools" class="dropdown-item" href="/category/special-tools"&gt;Herramientas especiales&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li _ngcontent-ng-c2913155081=""&gt;<br/>
+           &lt;hr _ngcontent-ng-c2913155081="" class="dropdown-divider"&gt;&lt;/li&gt;<br/>
+          &lt;li _ngcontent-ng-c2913155081=""&gt;&lt;a _ngcontent-ng-c2913155081="" data-test="nav-rentals" routerlink="/rentals" class="dropdown-item" href="/rentals"&gt;Alquileres&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;/ul&gt;&lt;/li&gt;<br/>
+        &lt;li _ngcontent-ng-c2913155081="" role="menuitem" class="nav-item"&gt;&lt;a _ngcontent-ng-c2913155081="" data-test="nav-contact" routerlink="/contact" class="nav-link" href="/contact"&gt;Contacto&lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;li _ngcontent-ng-c2913155081="" role="menuitem" class="nav-item"&gt;&lt;a _ngcontent-ng-c2913155081="" data-test="nav-sign-in" routerlink="/auth/login" class="nav-link" href="/auth/login"&gt;Iniciar sesión&lt;/a&gt;&lt;/li&gt;&lt;!----&gt;&lt;!----&gt;&lt;!----&gt;&lt;!----&gt;<br/>
+       &lt;/ul&gt;<br/>
+       &lt;div _ngcontent-ng-c2913155081="" class="btn-group dropdown"&gt;<br/>
+        &lt;button _ngcontent-ng-c2913155081="" id="language" type="button" data-test="language-select" aria-label="Select language" data-bs-toggle="dropdown" aria-expanded="false" class="btn nav-link dropdown-toggle"&gt;<br/>
+         &lt;fa-icon _ngcontent-ng-c2913155081="" class="ng-fa-icon"&gt;<br/>
+          &lt;svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="globe" class="svg-inline--fa fa-globe fa-undefined fa-pull-undefined" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"&gt;<br/>
+           &lt;path fill="currentColor" d="M352 256c0 22.2-1.2 43.6-3.3 64l-185.3 0c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64l185.3 0c2.2 20.4 3.3 41.8 3.3 64zm28.8-64l123.1 0c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64l-123.1 0c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32l-116.7 0c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0l-176.6 0c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0L18.6 160C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192l123.1 0c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64L8.1 320C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6l176.6 0c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352l116.7 0zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6l116.7 0z"&gt;&lt;/path&gt;<br/>
+          &lt;/svg&gt;<br/>
+         &lt;/fa-icon&gt; ES &lt;span _ngcontent-ng-c2913155081="" class="caret"&gt;&lt;/span&gt;&lt;/button&gt;<br/>
+        &lt;ul _ngcontent-ng-c2913155081="" id="dropdown-animated" role="menu" aria-labelledby="language" class="dropdown-menu dropdown-menu-right"&gt;<br/>
+         &lt;li _ngcontent-ng-c2913155081="" role="menuitem"&gt;&lt;a _ngcontent-ng-c2913155081="" data-test="lang-de" class="dropdown-item"&gt;DE&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li _ngcontent-ng-c2913155081="" role="menuitem"&gt;&lt;a _ngcontent-ng-c2913155081="" data-test="lang-el" class="dropdown-item"&gt;EL&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li _ngcontent-ng-c2913155081="" role="menuitem"&gt;&lt;a _ngcontent-ng-c2913155081="" data-test="lang-en" class="dropdown-item"&gt;EN&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li _ngcontent-ng-c2913155081="" role="menuitem"&gt;&lt;a _ngcontent-ng-c2913155081="" data-test="lang-es" class="dropdown-item"&gt;ES&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li _ngcontent-ng-c2913155081="" role="menuitem"&gt;&lt;a _ngcontent-ng-c2913155081="" data-test="lang-fr" class="dropdown-item"&gt;FR&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li _ngcontent-ng-c2913155081="" role="menuitem"&gt;&lt;a _ngcontent-ng-c2913155081="" data-test="lang-nl" class="dropdown-item"&gt;NL&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li _ngcontent-ng-c2913155081="" role="menuitem"&gt;&lt;a _ngcontent-ng-c2913155081="" data-test="lang-tr" class="dropdown-item"&gt;TR&lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;/ul&gt;<br/>
+       &lt;/div&gt;<br/>
+      &lt;/div&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/nav&gt;&lt;!----&gt;<br/>
+   &lt;/app-header&gt;<br/>
+   &lt;div class="container"&gt;<br/>
+    &lt;router-outlet&gt;&lt;/router-outlet&gt;&lt;app-login _nghost-ng-c713820125=""&gt;<br/>
+     &lt;div _ngcontent-ng-c713820125="" class="container auth-container"&gt;<br/>
+      &lt;div _ngcontent-ng-c713820125="" class="row justify-content-md-center"&gt;<br/>
+       &lt;div _ngcontent-ng-c713820125="" class="col-lg-6 auth-form"&gt;<br/>
+        &lt;h3 _ngcontent-ng-c713820125=""&gt;Iniciar sesión&lt;/h3&gt;<br/>
+        &lt;div _ngcontent-ng-c713820125="" class="text-center my-4"&gt;<br/>
+         &lt;button _ngcontent-ng-c713820125="" type="button" aria-label="Sign in with Google" class="google-sign-in-button"&gt; Sign in with Google &lt;/button&gt;<br/>
+        &lt;/div&gt;&lt;!----&gt;<br/>
+        &lt;div _ngcontent-ng-c713820125="" aria-label="Alternative login methods" class="separator"&gt;<br/>
+         o usar<br/>
+        &lt;/div&gt;&lt;!----&gt;<br/>
+        &lt;form _ngcontent-ng-c713820125="" novalidate autocomplete="off" data-test="login-form" class="ng-untouched ng-pristine ng-invalid"&gt;<br/>
+         &lt;div _ngcontent-ng-c713820125="" class="mb-3"&gt;<br/>
+          &lt;label _ngcontent-ng-c713820125="" for="email" class="form-label"&gt;Dirección de correo electrónico *&lt;/label&gt;&lt;input _ngcontent-ng-c713820125="" formcontrolname="email" id="email" data-test="email" type="email" aria-required="true" class="form-control ng-untouched ng-pristine ng-invalid" placeholder="Tu correo electrónico" aria-invalid="false"&gt;<br/>
+         &lt;/div&gt;&lt;!----&gt;<br/>
+         &lt;div _ngcontent-ng-c713820125="" class="mb-3"&gt;<br/>
+          &lt;label _ngcontent-ng-c713820125="" for="password"&gt;Contraseña *&lt;/label&gt;&lt;app-password-input _ngcontent-ng-c713820125="" formcontrolname="password" class="ng-untouched ng-pristine ng-invalid"&gt;<br/>
+           &lt;div class="input-group"&gt;<br/>
+            &lt;input class="form-control" id="password" type="password" placeholder="Tu contraseña" data-test="password" aria-invalid="false"&gt;<br/>
+            &lt;div class="input-group-append"&gt;<br/>
+             &lt;button type="button" class="btn btn-outline-secondary"&gt;<br/>
+              &lt;fa-icon class="ng-fa-icon"&gt;<br/>
+               &lt;svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="eye" class="svg-inline--fa fa-eye fa-undefined fa-pull-undefined" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512"&gt;<br/>
+                &lt;path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"&gt;&lt;/path&gt;<br/>
+               &lt;/svg&gt;<br/>
+              &lt;/fa-icon&gt;&lt;/button&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;<br/>
+          &lt;/app-password-input&gt;<br/>
+         &lt;/div&gt;&lt;!----&gt;<br/>
+         &lt;div _ngcontent-ng-c713820125="" class="input-group mb-3"&gt;<br/>
+          &lt;input _ngcontent-ng-c713820125="" type="submit" data-test="login-submit" aria-label="Login" class="btnSubmit" value="Iniciar sesión"&gt;<br/>
+         &lt;/div&gt;<br/>
+        &lt;/form&gt;<br/>
+        &lt;div _ngcontent-ng-c713820125="" class="input-group mb-3"&gt;<br/>
+         &lt;p _ngcontent-ng-c713820125=""&gt;¿Aún no tienes una cuenta? &lt;a _ngcontent-ng-c713820125="" data-test="register-link" routerlink="/auth/register" aria-label="Register your account" href="/auth/register"&gt;Registra tu cuenta&lt;/a&gt;&lt;br _ngcontent-ng-c713820125=""&gt;&lt;a _ngcontent-ng-c713820125="" data-test="forgot-password-link" routerlink="/auth/forgot-password" aria-label="Forgot your Password?" class="ForgetPwd" href="/auth/forgot-password"&gt;¿Olvidaste tu contraseña?&lt;/a&gt;&lt;/p&gt;<br/>
+        &lt;/div&gt;&lt;!----&gt;&lt;!----&gt;&lt;!----&gt;<br/>
+       &lt;/div&gt;<br/>
+      &lt;/div&gt;<br/>
+     &lt;/div&gt;&lt;!----&gt;<br/>
+    &lt;/app-login&gt;&lt;!----&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;app-footer _nghost-ng-c854836465=""&gt;<br/>
+    &lt;footer _ngcontent-ng-c854836465="" class="mt-4"&gt;<br/>
+     &lt;div _ngcontent-ng-c854836465="" data-test="footer-explore" class="ptt-explore bg-body-tertiary border-top border-bottom py-3 small"&gt;<br/>
+      &lt;div _ngcontent-ng-c854836465="" class="container"&gt;<br/>
+       &lt;div _ngcontent-ng-c854836465="" class="ptt-explore-heading text-uppercase text-muted fw-semibold mb-2 text-center"&gt;<br/>
+        Learn &amp; Explore<br/>
+       &lt;/div&gt;<br/>
+       &lt;div _ngcontent-ng-c854836465="" class="row g-3 justify-content-center"&gt;<br/>
+        &lt;div _ngcontent-ng-c854836465="" class="col-12 col-md-4"&gt;<br/>
+         &lt;a _ngcontent-ng-c854836465="" href="https://onlinecourses.testsmith.io" target="_blank" rel="noopener" data-test="footer-learn-courses" class="ptt-explore-link d-flex align-items-start justify-content-center gap-2"&gt;<br/>
+          &lt;svg _ngcontent-ng-c854836465="" viewbox="0 0 640 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" class="ptt-explore-icon text-secondary"&gt;<br/>
+           &lt;path _ngcontent-ng-c854836465="" d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9l0 28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5l0-24.6c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"&gt;&lt;/path&gt;<br/>
+          &lt;/svg&gt;&lt;span _ngcontent-ng-c854836465=""&gt;&lt;span _ngcontent-ng-c854836465="" class="ptt-explore-title d-block text-body fw-semibold"&gt;Learn Test Automation&lt;/span&gt;&lt;span _ngcontent-ng-c854836465="" class="text-muted"&gt;Hands-on courses for Playwright, Robot Framework, APIs and more&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div _ngcontent-ng-c854836465="" class="col-12 col-md-4"&gt;<br/>
+         &lt;a _ngcontent-ng-c854836465="" href="https://api-spector.dev" target="_blank" rel="noopener" data-test="footer-learn-spector" class="ptt-explore-link d-flex align-items-start justify-content-center gap-2"&gt;<br/>
+          &lt;svg _ngcontent-ng-c854836465="" viewbox="0 0 640 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" class="ptt-explore-icon text-secondary"&gt;<br/>
+           &lt;path _ngcontent-ng-c854836465="" d="M175 389.4c-9.8 16-15 34.3-15 53.1c-10 3.5-20.8 5.5-32 5.5c-53 0-96-43-96-96L32 64C14.3 64 0 49.7 0 32S14.3 0 32 0L96 0l64 0 64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l0 245.9-49 79.6zM96 64l0 96 64 0 0-96L96 64zM352 0L480 0l32 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l0 150.9L629.7 406.2c6.7 10.9 10.3 23.5 10.3 36.4c0 38.3-31.1 69.4-69.4 69.4l-309.2 0c-38.3 0-69.4-31.1-69.4-69.4c0-12.8 3.6-25.4 10.3-36.4L320 214.9 320 64c-17.7 0-32-14.3-32-32s14.3-32 32-32l32 0zm32 64l0 160c0 5.9-1.6 11.7-4.7 16.8L330.5 320l171 0-48.8-79.2c-3.1-5-4.7-10.8-4.7-16.8l0-160-64 0z"&gt;&lt;/path&gt;<br/>
+          &lt;/svg&gt;&lt;span _ngcontent-ng-c854836465=""&gt;&lt;span _ngcontent-ng-c854836465="" class="ptt-explore-title d-block text-body fw-semibold"&gt;API Spector&lt;/span&gt;&lt;span _ngcontent-ng-c854836465="" class="text-muted"&gt;Open-source API testing, mocking and contract testing&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div _ngcontent-ng-c854836465="" class="col-12 col-md-4"&gt;<br/>
+         &lt;a _ngcontent-ng-c854836465="" href="https://github.com/testsmith-io/practice-software-testing" target="_blank" rel="noopener" data-test="footer-learn-github" class="ptt-explore-link d-flex align-items-start justify-content-center gap-2"&gt;<br/>
+          &lt;svg _ngcontent-ng-c854836465="" viewbox="0 0 640 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" class="ptt-explore-icon text-secondary"&gt;<br/>
+           &lt;path _ngcontent-ng-c854836465="" d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"&gt;&lt;/path&gt;<br/>
+          &lt;/svg&gt;&lt;span _ngcontent-ng-c854836465=""&gt;&lt;span _ngcontent-ng-c854836465="" class="ptt-explore-title d-block text-body fw-semibold"&gt;GitHub&lt;/span&gt;&lt;span _ngcontent-ng-c854836465="" class="text-muted"&gt;Source code, issues and contributions&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;<br/>
+        &lt;/div&gt;<br/>
+       &lt;/div&gt;<br/>
+      &lt;/div&gt;<br/>
+     &lt;/div&gt;&lt;!----&gt;<br/>
+     &lt;div _ngcontent-ng-c854836465="" class="container-fluid text-center bg-light py-2"&gt;<br/>
+      &lt;div _ngcontent-ng-c854836465=""&gt;<br/>
+       Esta es una aplicación DEMO, utilizada para propósitos de formación en pruebas de software. | &lt;a _ngcontent-ng-c854836465="" routerlink="privacy" href="/privacy"&gt;Privacy Policy&lt;/a&gt; | Banner photo by &lt;a _ngcontent-ng-c854836465="" target="_blank" href="https://unsplash.com/@barnimages"&gt;Barn Images&lt;/a&gt; on &lt;a _ngcontent-ng-c854836465="" target="_blank" href="https://unsplash.com/photos/t5YUoHW6zRo"&gt;Unsplash&lt;/a&gt;.<br/>
+      &lt;/div&gt;<br/>
+      &lt;div _ngcontent-ng-c854836465="" class="text-muted"&gt;<br/>
+       v2.5 | Built 2026-10-11 | Angular 20.0.5<br/>
+      &lt;/div&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/footer&gt;&lt;!----&gt;<br/>
+   &lt;/app-footer&gt;<br/>
+   &lt;app-chat-widget _nghost-ng-c3541368737=""&gt;<br/>
+    &lt;div _ngcontent-ng-c3541368737="" class="chat-widget"&gt;<br/>
+     &lt;button _ngcontent-ng-c3541368737="" aria-label="Open chat" data-test="chat-toggle" class="chat-toggle-btn"&gt;<br/>
+      &lt;svg _ngcontent-ng-c3541368737="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;<br/>
+       &lt;path _ngcontent-ng-c3541368737="" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"&gt;&lt;/path&gt;<br/>
+      &lt;/svg&gt;&lt;/button&gt;&lt;!----&gt;&lt;!----&gt;<br/>
+    &lt;/div&gt;&lt;!----&gt;<br/>
+   &lt;/app-chat-widget&gt;<br/>
+   &lt;app-live-activity-widget _nghost-ng-c4222135567=""&gt;<br/>
+    &lt;div _ngcontent-ng-c4222135567="" class="live-widget"&gt;<br/>
+     &lt;!----&gt;&lt;button _ngcontent-ng-c4222135567="" type="button" data-test="live-activity-toggle" class="live-toggle-btn" aria-label="Show live shop activity"&gt;<br/>
+      &lt;svg _ngcontent-ng-c4222135567="" viewbox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"&gt;<br/>
+       &lt;path _ngcontent-ng-c4222135567="" d="M4 11a9 9 0 0 1 9 9"&gt;&lt;/path&gt;&lt;path _ngcontent-ng-c4222135567="" d="M4 4a16 16 0 0 1 16 16"&gt;&lt;/path&gt;&lt;circle _ngcontent-ng-c4222135567="" cx="5" cy="19" r="1"&gt;&lt;/circle&gt;<br/>
+      &lt;/svg&gt;&lt;!----&gt;&lt;/button&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/app-live-activity-widget&gt;<br/>
+  &lt;/app-root&gt;<br/>
+  &lt;link rel="modulepreload" href="chunk-2LPTYWDZ.js"&gt;<br/>
+  &lt;link rel="modulepreload" href="chunk-NL7EYMFL.js"&gt;<br/>
+  &lt;link rel="modulepreload" href="chunk-SS5V56Y4.js"&gt;<br/>
+  &lt;link rel="modulepreload" href="chunk-ASGR4LAJ.js"&gt;<br/>
+  &lt;link rel="modulepreload" href="chunk-V6JUSCA4.js"&gt;<br/>
+  &lt;link rel="modulepreload" href="chunk-NGEDD5VW.js"&gt;<br/>
+  &lt;link rel="modulepreload" href="chunk-YPVC3LSK.js"&gt;<br/>
+  &lt;link rel="modulepreload" href="chunk-AF7JJAKC.js"&gt;<br/>
+  &lt;link rel="modulepreload" href="chunk-VTD2Z4OM.js"&gt;<br/>
+  &lt;link rel="modulepreload" href="chunk-VQWSWP6Q.js"&gt;<br/>
+  &lt;script src="polyfills-P3D37GLB.js" type="module"&gt;&lt;/script&gt;<br/>
+  &lt;script src="scripts-WL2QHKC5.js" defer&gt;&lt;/script&gt;<br/>
+  &lt;script src="main-GAD5H2ZL.js" type="module"&gt;&lt;/script&gt;<br/>
+  &lt;script&gt;(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5ee55efed2ba51e',t:'MTc5NTQxNzYzMw=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5ee55efed2ba51e',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();&lt;/script&gt;&lt;iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; visibility: hidden;"&gt;&lt;/iframe&gt;<br/>
+  &lt;script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;df13a0ecec6e47d4a531b7da7efbd6fc&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"&gt;&lt;/script&gt;<br/>
+ &lt;/body&gt;<br/>
+&lt;/html&gt;</code></pre></div></body></html>

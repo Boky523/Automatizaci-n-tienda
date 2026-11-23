@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="Registro de un usuario nuevo en la tienda" skipped="0" tests="1" time="0.07" timestamp="2026-11-23 02:28:27"><testcase name="Registro de un nuevo usuario en la tienda"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:906)&#13;
+stepdefinitions.RegistroStepDefinitions.queElUsuarioAccedeALaPaginaDeInicioDeSesion(RegistroStepDefinitions.java:33)&#13;
+✽.que el usuario accede a la página de inicio de sesión para registrase(classpath:features/Registro.feature:5)&#13;
+</system-err></testcase></testsuite>

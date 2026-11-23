@@ -19,4 +19,7 @@ public class LoginPage {
 
     public static final Target LOGIN_ERROR_MESSAGE = Target.the("mensaje de error de inicio de sesión")
             .locatedBy("[data-test='login-error']");
+
+    public static final Target ENLACE_REGISTRARSE = Target.the("Boton de registra usuario")
+            .locatedBy("[data-test='register-link']");
 }
