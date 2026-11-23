@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Iniciar sesión con credenciales inválidas" skipped="1" tests="1" time="0.2" timestamp="2026-11-23 12:28:03"><testcase name="Intentar iniciar sesión con credenciales inválidas"><compromised message="Environment 'webdriver.base.url' property undefined for environment '[]'" type="net.serenitybdd.model.environment.UndefinedEnvironmentVariableException">Environment 'webdriver.base.url' property undefined for environment '[]'</compromised><system-err>Environment 'webdriver.base.url' property undefined for environment '[]'&#13;
+net.serenitybdd.model.environment.EnvironmentSpecificConfiguration.lambda$getProperty$11(EnvironmentSpecificConfiguration.java:196)&#13;
+net.serenitybdd.model.environment.EnvironmentSpecificConfiguration.getProperty(EnvironmentSpecificConfiguration.java:192)&#13;
+tasks.AbrirPaginaLogin.performAs(AbrirPaginaLogin.java:23)&#13;
+stepdefinitions.LoginStepDefinitions.queElUsuarioAccedeALaPaginaDeInicioDeSesion(LoginStepDefinitions.java:31)&#13;
+✽.que el usuario accede a la página de inicio de sesión(classpath:features/login.feature:6)&#13;
+</system-err></testcase></testsuite>
